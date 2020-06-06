@@ -1,13 +1,19 @@
 @import "app";
 /* App Header Styles Start Here */
 header {
+  background-color: $layout-light;
   .navbar {
     padding: 30px 15px;
     @include normal-screen {
       padding: 50px 15px;
     }
     .container {
-      max-width: 1485px;
+      @include large-screen {
+        max-width: 1100px;
+      }
+      @include xlarge-screen {
+        max-width: 1485px;
+      }
       .navbar-brand {
         width: 100px;
         margin-right: 50px;
@@ -20,16 +26,27 @@ header {
         padding: 0;
       }
       .navbar-collapse {
+        z-index: 10;
         border-radius: 10px;
         background: $primary-medium;
         justify-content: space-between;
         padding: 15px;
+        @include normal-screen {
+          background: transparent;
+        }
         &.show {
           width: 90%;
           position: absolute;
           top: 85px;
           left: 50%;
           transform: translateX(-50%);
+          @include normal-screen {
+            width: auto;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+          }
         }
         .navbar-nav {
           align-items: center;
@@ -71,7 +88,6 @@ header {
             }
             &:hover {
               color: $primary-dark;
-              text-decoration: none;
             }
           }
           .shrt-btn {

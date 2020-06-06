@@ -1,5 +1,82 @@
 @import "app";
 /* Footer Styles Start Here */
 footer {
-
+  padding: 50px;
+  text-align: center;
+  color: $layout-light;
+  background-color: $primary-dark;
+  @include normal-screen {
+    padding: 90px;
+    text-align: left;
+  }
+  .container {
+    @include large-screen {
+      max-width: 1100px;
+    }
+    @include xlarge-screen {
+      max-width: 1485px;
+    }
+    .app-name {
+      font-size: 48px;
+      margin-bottom: 50px;
+      @include normal-screen {
+        margin-bottom: 0;
+      }
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include normal-screen {
+        flex-direction: row;
+      }
+      .menu-category {
+        .category-name {
+          padding: 0 16px;
+          margin-bottom: 15px;
+        }
+        .nav {
+          flex-direction: column;
+          .nav-item {
+            .nav-link {
+              color: $typing;
+              &:hover {
+                color: $highlight;
+              }
+            }
+          }
+        }
+        + .menu-category {
+          margin-top: 40px;
+          @include normal-screen {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .socials {
+      margin-top: 50px;
+      @include normal-screen {
+        margin-top: 0;
+      }
+      @include large-screen {
+        padding-left: 100px;
+      }
+      .social-links {
+        .social-link {
+          + .social-link {
+            margin-left: 20px;
+            @include large-screen {
+              margin-left: 30px;
+            }
+          }
+          &:hover {
+            .icon {
+              fill: $highlight;
+            }
+          }
+        }
+      }
+    }
+  }
 }
