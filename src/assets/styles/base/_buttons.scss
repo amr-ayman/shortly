@@ -1,0 +1,39 @@
+@import "variables";
+/* Shortly Buttons Styles */
+.shrt-btn {
+  border: none;
+  text-align: center;
+  color: $layout-light;
+  font-weight: 700;
+  border-radius: 5px;
+  .large {
+    width: 100%;
+  }
+  &.medium {
+    padding: 10px 25px;
+    width: fit-content;
+  }
+  &.apply {
+    background-color: $highlight;
+    &:hover {
+      background-color: $highlight-light;
+    }
+  }
+  &.round {
+    border-radius: 25px;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: context-menu;
+    background-color: $typing;
+    &:hover {
+      background-color: $typing;
+    }
+  }
+}

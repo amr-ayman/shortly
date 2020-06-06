@@ -1,0 +1,30 @@
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="javascript:">
+        <img src="./assets/images/logo/shortly-logo.svg" alt="Shortly Logo" class="img-fluid">
+      </a>
+      <span class="navbar-toggler" (click)="isMenuOpen = !isMenuOpen">
+        <img *ngIf="!isMenuOpen" src="./assets/images/menu.svg" alt="Menu Icon" class="img-fluid">
+        <img *ngIf="isMenuOpen" src="./assets/images/close.svg" alt="Close Icon" class="img-fluid">
+      </span>
+      <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">Resources</a>
+          </li>
+        </ul>
+        <div class="user-options">
+          <a class="login" href="javascript:">Login</a>
+          <a class="shrt-btn medium apply round" href="javascript:">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

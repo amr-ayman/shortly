@@ -1,0 +1,28 @@
+@import "app";
+/* Typography Resets*/
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+/* Body Styles Start Here */
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  min-width: 320px;
+  color: $primary-dark;
+  font-family: 'Heebo', sans-serif;
+  @include normal-screen {
+    overflow-x: hidden;
+  }
+}
+/* Main Layout Styles Start Here */
+.layout {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $layout-light;
+  main {
+    flex-grow: 1;
+  }
+}
