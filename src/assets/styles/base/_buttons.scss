@@ -5,7 +5,11 @@
   text-align: center;
   color: $layout-light;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: $primary;
+  &:hover {
+    background-color: $primary-medium;
+  }
   .large {
     width: 100%;
   }
@@ -29,11 +33,7 @@
     cursor: pointer;
   }
   &:disabled {
-    opacity: 0.5;
     cursor: context-menu;
-    background-color: $typing;
-    &:hover {
-      background-color: $typing;
-    }
+    background-color: $highlight-light;
   }
 }

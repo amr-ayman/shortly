@@ -1,0 +1,82 @@
+@import "app";
+/* Hero Banner Styles Start Here */
+section {
+  overflow-x: hidden;
+  padding: 25px 15px 150px;
+  background-color: $layout-light;
+  @include normal-screen {
+    padding: 25px 15px 200px;
+  }
+  .container {
+    @include large-screen {
+      max-width: 1100px;
+    }
+    @include xlarge-screen {
+      max-width: 1485px;
+    }
+    .row {
+      @include normal-screen {
+        direction: rtl;
+      }
+    }
+    .banner-content {
+      text-align: center;
+      @include normal-screen {
+        text-align: left;
+      }
+      .banner-title {
+        font-size: 38px;
+        font-weight: 900;
+        margin: 30px 0 10px;
+        @include medium-screen {
+          font-size: 90px;
+        }
+        @include normal-screen {
+          font-size: 48px;
+        }
+        @include large-screen {
+          font-size: 75px;
+        }
+      }
+      .banner-description {
+        direction: ltr;
+        color: $typing;
+        margin-bottom: 30px;
+        @include medium-screen {
+          font-size: 30px;
+        }
+        @include normal-screen {
+          font-size: 18px;
+          margin-bottom: 50px;
+        }
+        @include large-screen {
+          font-size: 22px;
+        }
+        @include large-screen {
+          font-size: 30px;
+        }
+      }
+      .banner-action {
+        @include normal-screen {
+          padding: 10px 45px;
+          font-size: 22px;
+        }
+      }
+    }
+    .banner-wrapper {
+      position: relative;
+      .banner {
+        transform: translateX(20%);
+        @include normal-screen {
+          transform: translateX(23%);
+        }
+        @include large-screen {
+          transform: translateX(36%);
+        }
+        @include xlarge-screen {
+          transform: translateX(50%);
+        }
+      }
+    }
+  }
+}

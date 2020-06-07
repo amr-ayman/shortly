@@ -1,0 +1,24 @@
+<section>
+  <div class="container">
+    <form class="shorten-url-form" [formGroup]="shortenUrlForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Shorten a link here..." formControlName="url"
+               [class.has-error]="(shortenUrlForm.get('url').touched || shortenUrlForm.get('url').dirty) && !shortenUrlForm.get('url').valid">
+        <div class="error-message" *ngIf="(shortenUrlForm.get('url').touched || shortenUrlForm.get('url').dirty) && !shortenUrlForm.get('url').valid">
+          <span class="message" *ngIf="shortenUrlForm.get('url').errors?.required">Please add a link</span>
+          <span class="message" *ngIf="shortenUrlForm.get('url').errors?.notUrl">Please type valid url</span>
+        </div>
+      </div>
+      <button type="submit" class="shrt-btn medium apply" [disabled]="shortenUrlForm.invalid">Shorten It!</button>
+    </form>
+    <div class="urls">
+      <div class="url" *ngFor="let url of urls">
+        <div class="full-url">{{url.fullUrl}}</div>
+        <div class="shorten-url">
+          <span class="short-url">{{url.shortUrl}}</span>
+          <a class="shrt-btn medium" href="javascript:" [class.apply]="!url.isCopied" (click)="onCopy(url)" ngxClipboard [cbContent]="url.shortUrl">{{url.isCopied ? 'Copied!' : 'Copy'}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

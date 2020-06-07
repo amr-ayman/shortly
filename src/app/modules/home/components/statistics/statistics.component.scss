@@ -20,84 +20,92 @@ section {
       margin: 0 auto 80px;
     }
   }
-  .widgets {
-    @include normal-screen {
-      display: flex;
-      justify-content: space-between;
+  .container {
+    @include large-screen {
+      max-width: 1100px;
     }
-    .widget {
-      z-index: 2;
-      padding: 60px 35px 35px;
-      position: relative;
-      border-radius: 10px;
-      background-color: $layout-light;
+    @include xlarge-screen {
+      max-width: 1485px;
+    }
+    .widgets {
       @include normal-screen {
-        width: 30%;
+        display: flex;
+        justify-content: space-between;
       }
-      .widget-icon {
-        .icon-wrapper {
-          width: 75px;
-          height: 75px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          background-color: $primary-medium;
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          @include normal-screen {
-            left: 75px;
-          }
-          .icon {
-            max-width: 30px;
-            height: auto;
-          }
-        }
-      }
-      .widget-title {
-        font-size: 21px;
-        margin-bottom: 25px;
-      }
-      .widget-description {
-        color: $typing;
-      }
-      &:first-child {
-        z-index: 3;
-      }
-      &:last-child {
-        z-index: 1;
-      }
-      + .widget {
-        margin-top: 75px;
+      .widget {
+        z-index: 2;
+        padding: 60px 35px 35px;
+        position: relative;
+        border-radius: 10px;
+        background-color: $layout-light;
         @include normal-screen {
-          margin-top: 35px;
+          width: 30%;
         }
-        &::before {
-          content: '';
-          width: 7px;
-          height: 40px;
-          display: inline-block;
-          position: absolute;
-          top: -75px;
-          left: 50%;
-          transform: translateX(-2px);
-          background-color: $highlight;
-          @include normal-screen {
-            width: 55px;
-            height: 7px;
-            top: 85px;
-            left: -53px;
+        .widget-icon {
+          .icon-wrapper {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: $primary-medium;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include normal-screen {
+              left: 75px;
+            }
+            .icon {
+              max-width: 30px;
+              height: auto;
+            }
           }
+        }
+        .widget-title {
+          font-size: 21px;
+          margin-bottom: 25px;
+        }
+        .widget-description {
+          color: $typing;
+        }
+        &:first-child {
+          z-index: 3;
         }
         &:last-child {
+          z-index: 1;
+        }
+        + .widget {
+          margin-top: 75px;
           @include normal-screen {
-            margin-top: 70px;
+            margin-top: 35px;
           }
           &::before {
+            content: '';
+            width: 7px;
+            height: 40px;
+            display: inline-block;
+            position: absolute;
+            top: -75px;
+            left: 50%;
+            transform: translateX(-2px);
+            background-color: $highlight;
             @include normal-screen {
-              top: 50px;
+              width: 75px;
+              height: 7px;
+              top: 85px;
+              left: -73px;
+            }
+          }
+          &:last-child {
+            @include normal-screen {
+              margin-top: 70px;
+            }
+            &::before {
+              @include normal-screen {
+                top: 50px;
+              }
             }
           }
         }

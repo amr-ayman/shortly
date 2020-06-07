@@ -1,0 +1,116 @@
+@import "app";
+/* Shorten URL Styles Start Here */
+section {
+  position: relative;
+  .container {
+    @include large-screen {
+      max-width: 1100px;
+    }
+    @include xlarge-screen {
+      max-width: 1485px;
+    }
+    .shorten-url-form {
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: -79px;
+      background-color: $primary-medium;
+      background-image: url('src/assets/images/bg-boost-mobile.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include normal-screen {
+        display: flex;
+        padding: 55px;
+        margin-top: -115px;
+        justify-content: space-between;
+        background-image: url('src/assets/images/bg-boost-desktop.svg');
+      }
+      @include xlarge-screen {
+        padding: 85px 65px;
+      }
+      .form-group {
+        margin-bottom: 0;
+        @include normal-screen {
+          width: calc(100% - 160px);
+        }
+        .form-control {
+          height: 54px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          border-width: 2px;
+          &:focus {
+            box-shadow: none;
+            border: 2px solid $primary;
+          }
+          @include normal-screen {
+            margin-bottom: 0;
+          }
+          &.has-error {
+            border: 2px solid $error;
+          }
+        }
+        .error-message {
+          .message {
+            color: $error;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+          }
+        }
+      }
+      .shrt-btn {
+        width: 100%;
+        @include normal-screen {
+          width: fit-content;
+        }
+      }
+    }
+    .urls {
+      .url {
+        padding: 15px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: $layout-light;
+        @include normal-screen {
+          justify-content: space-between;
+          padding: 35px 40px;
+          flex-direction: row;
+          align-items: center;
+        }
+        .full-url {
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          border-bottom: 1px solid $typing;
+          @include normal-screen {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+        }
+        .shorten-url {
+          display: flex;
+          flex-direction: column;
+          @include normal-screen {
+            flex-direction: row;
+            align-items: center;
+          }
+          .short-url {
+            color: $highlight;
+            margin-bottom: 15px;
+            @include normal-screen {
+              margin-bottom: 0;
+              margin-right: 35px;
+            }
+          }
+          .shrt-btn {
+            width: 100%;
+            @include normal-screen {
+              width: fit-content;
+            }
+          }
+        }
+      }
+    }
+  }
+}
